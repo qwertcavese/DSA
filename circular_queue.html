@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var list=new Array(5);
+        var length=0;
+        var front=-1;
+        var rear=-1;
+        function push1(){
+            var txt=document.getElementById("txt").value;
+            if(front===-1&&rear===-1){
+                rear=0;
+                front=0;
+                list[rear]=txt;
+                length++;
+            }
+            else if(rear<list.length){
+                
+                if(length<list.length){
+                rear=(rear+1)%list.length;
+                list[rear]=txt;
+                length++;
+            }
+                 else {
+                alert("Queue is full")
+            }
+            
+            }
+           
+            document.querySelector("#txt").focus();
+           showvalues();
+           display1();
+        
+        }
+
+        function pop1(){
+            var txt=document.getElementById("txt").value;
+            if(front===-1){
+                alert("Queue is empty")
+            }
+            else if(front<list.length){
+                    if(rear==front){
+                        list[front]=undefined;
+                        front=-1;
+                        rear=-1;
+                        length=0;
+                    }
+                    
+                
+                else{
+                    list[front]=undefined;
+                    front=(front+1)%list.length;
+                    length--;
+                }
+                }
+                display1();   
+            showvalues();
+            
+        }
+
+        function display1(){
+            var ul="<ul>"   
+
+
+                for(i=front;i!=rear;i=(i+1)%5){
+                        ul+="<li>"+list[i]+"</li>"
+                    }
+                        ul+="<li>"+list[i]+"</li>"
+                
+                ul+="</ul>"
+                document.querySelector("#ans").innerHTML=ul;
+            
+    }
+
+
+        function showvalues(){
+            console.log(list);
+            console.log("front:"+front,"rear:"+rear,"length:"+length);
+        }
+
+        
+
+    </script>
+</head>
+<body>
+    <h1>Circular queue</h1>
+    <input type="text" placeholder="Enter value" id="txt"/>
+    <button type="button" onclick="push1()">push</button>
+    <button type="button" onclick="pop1()">pop</button>
+    <div id="ans"></div>
+</body>
+</html>

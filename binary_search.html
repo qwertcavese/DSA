@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search</title>
+    <script>
+        // Function to perform binary search
+        function binarySearch(arr, target) {
+            let left = 0;
+            let right = arr.length - 1;
+
+            while (left <= right) {
+                let mid = Math.floor((left + right) / 2);
+
+                if (arr[mid] === target) {
+                    return mid; 
+                } else if (arr[mid] < target) {
+                    left = mid + 1; 
+                } else {
+                    right = mid - 1; 
+                }
+            }
+
+            return -1;
+        }
+
+        function search() {
+            let list = [1,3,4,6,8,10,12,15];
+            let searchValue = parseInt(document.getElementById("txt1").value);
+
+            let result = binarySearch(list, searchValue);
+
+            if (result !== -1) {
+                alert("Your value is found at index " + result);
+                document.getElementById("txt1").focus();
+            } else {
+                alert("Value does not exist in the list");
+                document.getElementById("txt1").focus();
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="Write the value you want to search" id="txt1"/>
+    <button type="button" onclick="search()">Click here to search</button>
+</body>
+</html> 
+
+

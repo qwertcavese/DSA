@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer>
+        var list=[];
+        var counter=-1;
+        function push1(){
+            var txt=document.getElementById("txt").value;
+            counter++;
+            list[counter]=txt;
+            display1();
+        }
+        function pop1(){
+            if(counter<0){
+                alert("List is already Empty")
+            }
+            else{
+
+                list[counter]=undefined;
+                counter--;
+                display1();
+            }
+        }
+        function display1(){
+            var tbl="<ul>"
+                for(var i=0;i<=counter;i++){
+                    tbl+="<li>"+list[i]+"</li>"
+                }
+                tbl+="</ul>"
+                document.getElementById("ans").innerHTML=tbl;
+        }
+    </script>
+</head>
+<body>
+    <h1>Stack</h1>
+    <input type="text" aria-placeholder="Enter text or value" id="txt"/>
+    <button type="button" onclick="push1()">Push in list</button>
+    <button type="button" onclick="pop1()">Pop from list</button>
+    <div id="ans"></div>
+</body>
+</html>

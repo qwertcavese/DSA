@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Search</title>
+    <script>
+        let list = [1, 5, 8, 6, 4, 3, 10];
+        var f = 1;
+
+        function search1() {
+            let searchValue = parseInt(document.getElementById("txt1").value);
+
+            for (var i = 0; i < list.length; i++) {
+                if (list[i] === searchValue) {
+                    alert("Your value is found at index " + i);
+                    f = 0;
+                    console.log(i);
+                    break;  // Stop the loop once the value is found
+                }
+            }
+
+            if (f === 1) {
+                alert("Value does not exist in the list");
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="Write the value you want to search" id="txt1"/>
+    <button type="button" onclick="search1()">Click here to search</button>
+</body>
+</html>
