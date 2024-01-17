@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>power</title>
+    <script>
+        var target=256;
+        var z=1;
+        function power(){
+            // do while loop is used when first we want to run loop one time and then check condition
+            do{
+                // here we have declare "x=false" which means if x remains false then loop will not run
+                var x=false;
+                for(var i=1;i<=target;i++){
+                    z=z*2;
+                    if(z<target){
+                        x=true;
+                    }
+                    else if(z==target){
+                         console.log("2 power"+i+"is"+target);
+                         x=false
+                         break;
+                     }
+                    else{
+                        alert("your targeted value doest not have any exponential of 2")
+                        x=false;
+                        break;
+                    }
+                }
+            }
+            // now if our first condition comes true then we will change value of "x" to true and we will pass "x"
+            // in "while" and if "while" gets the value true then it will again go to "do"and loop will run again
+            // and if "while" got value false then loop will not execute again
+            while(x);
+        }
+        power();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
