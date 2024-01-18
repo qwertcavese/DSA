@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertion sort</title>
+    <script>
+       var a=[1,8,3,6,7,5,-5,-12]
+       function sort(){
+        for(var i=1;i<a.length;i++){
+            var current=i-1;
+            var j=i-1;
+            while(a[j]>current&&j>=0){
+                a[j+1]=a[j];
+                j--;
+            }
+            a[j+1]=current
+        }
+        console.log(a);
+       } 
+       sort();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

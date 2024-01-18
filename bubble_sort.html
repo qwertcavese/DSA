@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubble sort</title>
+    <script>
+        var list=[5,3,6,1,4,2,-3,10]
+        function bubblesort(){
+            do{
+                var x=false;
+                for(var i=0;i<list.length-1;i++){
+                    if(list[i+1]<list[i]){
+                        var temp =list[i]
+                        list[i]=list[i+1];
+                        list[i+1]=temp;
+                        x=true;
+                    }
+                }
+                console.log(list);
+            }
+            while(x)
+        }
+    bubblesort();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
