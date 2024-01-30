@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>merge sorting</title>
+    <script>
+        function mergesort(arry){
+            if(arry.length<2){
+                return arry
+            }
+            var mid=Math.floor(arry.length/2)
+            // here mid is index 4" but it slice gives upto 4th index and not 4th index also but as its 
+            // start from "0"we do not have to do "+1" in "mid"
+            var leftarry=arry.slice(0,mid)
+            var rightarry=arry.slice(mid)
+            var x=mergesort(leftarry);
+            var y=mergesort(rightarry);
+             
+            var zarry=merge(x,y)
+            return zarry
+
+            function merge(left,right){
+                var temp=[]
+
+                while(left.length&&right.length){
+                    if(left[0]<right[0]){
+                        temp.push(left.shift())
+                    }
+                    else{
+                        temp.push(right.shift())
+                    }
+                }
+                return[...temp,...left,...right]
+            }
+        }
+        console.log(mergesort([1,9,3,6,4,8]));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

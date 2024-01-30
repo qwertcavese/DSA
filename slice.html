@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slice</title>
+    <script>
+        
+        // function slice1(arry){
+        //    var newarry= arry.slice(3)
+        //     return newarry
+        // }
+        // var z=slice1([5,10,8,9,6,8]);
+        // console.log(z);
+             
+        function makeslice(){
+            var arry=[1,10,8,2,6,9,4];
+            var temp=[]
+                var target=document.getElementById("txt").value
+                for(var i=0;i<target;i++){
+                    arry[i]=null;
+                }
+                while(i<arry.length)
+                {
+                    temp.push(arry[i])
+                    // console.log(temp);
+                    i++;
+                }
+                console.log(temp);
+            }
+
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="value" id="txt" />
+    <button type="button" onclick="makeslice()">click me to slice</button>
+</body>
+</html>

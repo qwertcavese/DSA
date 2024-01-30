@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class add</title>
+</head>
+<script>
+    class num{
+        constructor(hours,minute){
+            this.hrs=hours;
+            this.min=minute;
+        }
+        add(temp){
+            this.hrs=temp.hrs+this.hrs;
+            this.min=temp.min+this.min;
+            // console.log(temp.hrs,temp.min);
+        }
+    }
+    
+    var obj1=new num(5,3)
+    var obj2=new num(4,2)
+    // here we have called "add()" of class "num" for "obj1" to "obj2" so data of "obj2" will be passed as
+    // object in "temp" so now "temp" has both "this.hrs" and "this.min" so to access it we can write 
+    // "temp.hrs" and "temp.min"
+    obj1.add(obj2)
+    console.log(obj1);
+</script>
+<body>
+    
+</body>
+</html>

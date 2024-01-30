@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+</head>
+<script>
+    class car{
+        constructor(name,fuel,model){
+            // "this.n" will be considered as a global variable for class car and constructor
+            this.n=name;
+            this.f=fuel;
+            this.m=model;
+
+        }
+        // we do not need to write "function"  keyword to make any function in class 
+        display1(){
+            console.log(this.n);
+            console.log(this.f);
+            console.log(this.m);
+        }
+    }
+    var obj=new car("audi","water","Q10")
+    obj.display1();
+    // console.log(obj.n);
+</script>
+<body>
+    
+</body>
+</html>
