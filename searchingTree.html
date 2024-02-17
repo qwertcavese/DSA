@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class node {
+            constructor(v) {
+                this.value = v;
+                this.left = null;
+                this.right = null;
+            }
+        }
+
+        class tree {
+            constructor() {
+                this.root = null;
+            }
+
+            // inserting node in tree
+            insert(a) {
+                var n = new node(a);
+                if (this.root == null) {
+                    this.root = n;
+                } else {
+                    if (a < this.root.value) {
+                        if (this.root.left == null) this.root.left = n;
+                        else this.insertleft(this.root.left, n);
+                    } else {
+                        if (this.root.right == null) this.root.right = n;
+                        else this.insertright(this.root.right, n);
+                    }
+                }
+            }
+
+            insertleft(leftnode, n) {
+                if (n.value < leftnode.value) {
+                    if (leftnode.left == null) leftnode.left = n;
+                    else this.insertleft(leftnode.left, n);
+                } else {
+                    if (leftnode.right == null) leftnode.right = n;
+                    else this.insertleft(leftnode.right, n);
+                }
+            }
+
+            insertright(rightnode, n) {
+                if (n.value < rightnode.value) {
+                    if (rightnode.left == null) rightnode.left = n;
+                    else this.insertright(rightnode.left, n);
+                } else {
+                    if (rightnode.right == null) rightnode.right = n;
+                    else this.insertright(rightnode.right, n);
+                }
+            }
+
+            // searching
+            search(value) {
+                if (this.root.value >= value) this.searchv(this.root.left, value)
+                else if (this.root.value <= value) this.searchv(this.root.right, value)
+                else alert("tree is empty")
+            }
+            searchv(z, a) {
+                if(z.value>=a){
+                    if(z.value==a) alert("found")
+                    else this.searchv(z.left,a)
+                }
+                else if(z.value<=a) this.searchv(z.right,a)
+                else alert("not found")
+            }
+        }
+
+        function inOrder(root) {
+            if (root) {
+                inOrder(root.left)
+                console.log("InOrder:", root.value);
+                inOrder(root.right)
+            }
+        }
+
+
+
+        // Example usage:
+        let myTree = new tree();
+        myTree.insert(5);
+        myTree.insert(3);
+        myTree.insert(7);
+        myTree.insert(70);
+        myTree.insert(10);
+        myTree.insert(2);
+        myTree.insert(15);
+        inOrder(myTree.root)
+        myTree.search(150)
+
+
+    </script>
+</body>
+
+</html>

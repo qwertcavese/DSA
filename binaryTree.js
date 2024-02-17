@@ -46,6 +46,27 @@ class tree {
         }
     }
 }
+function inOrder(root) {
+    if (root) {
+        inOrder(root.left)
+        console.log("InOrder:", root.value);
+        inOrder(root.right)
+    }
+}
+// function preOrder(root) {
+//     if (root) {
+//         console.log("PreOrder:",root.value);
+//         inOrder(root.left)
+//         inOrder(root.right)
+//     }
+// }
+// function postOrder(root) {
+//     if (root) {
+//         inOrder(root.left)
+//         inOrder(root.right)
+//         console.log("PostOrder:",root.value);
+//     }
+// }
 
 // Example usage:
 let myTree = new tree();
@@ -56,4 +77,10 @@ myTree.insert(70);
 myTree.insert(10);
 myTree.insert(2);
 myTree.insert(15);
-console.log(myTree);
+// console.log(myTree);
+inOrder(myTree.root)
+// preOrder(myTree.root)
+// postOrder(myTree.root)
+
+
+
